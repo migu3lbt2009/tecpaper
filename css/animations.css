@@ -1,0 +1,62 @@
+/* Estilo para link ativo */
+nav a.active {
+    color: var(--cor-tech);
+    border-bottom: 2px solid var(--cor-tech);
+}
+
+/* Modo Dark (Opcional) */
+body.dark-mode {
+    --cor-papel: #1a1a1a;
+    --cor-papel-escuro: #252525;
+    --cor-tinta: #fdfaf5;
+    --cor-tinta-suave: #aaaaaa;
+    --cor-borda: #404040;
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-item,
+.coming-soon-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll behavior suave (já está no body, mas reforçando) */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Melhorias de acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--cor-tech);
+    outline-offset: 2px;
+}
+
+/* Animação de loading para formulário */
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.submit-button:disabled::after {
+    content: '';
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
